@@ -14,7 +14,9 @@ app.get("/", async (req, res) => {
 
 app.get("/test", async (req, res) => {
   res.set('Cache-control', 'public, max-age=120')
-  res.json({ cahed: true });
+  setTimeout(() => {
+    res.json({ cahed: true });
+  }, 5 * 1000);
 });
 
 app.listen(port, () => {
