@@ -12,6 +12,11 @@ app.get("/", async (req, res) => {
   res.json({ Hello: "World" });
 });
 
+app.get("/test", async (req, res) => {
+  res.set('Cache-control', 'public, max-age=120')
+  res.json({ cahed: true });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
